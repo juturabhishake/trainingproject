@@ -1,4 +1,3 @@
-// components/icons.tsx
 import { LucideProps, Home, User, Settings, Book, AlertTriangle } from "lucide-react";
 
 export const Icons = {
