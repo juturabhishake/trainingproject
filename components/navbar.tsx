@@ -86,9 +86,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-background shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="w-full fixed top-0 bg-background shadow-sm">
+      <div className="max-w-full mx-auto">
+        <div className="flex items-center justify-between h-16 p-6">
           <div className="flex items-center gap-2 md:gap-4">
             <div className="md:hidden">
               <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>

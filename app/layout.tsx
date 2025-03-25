@@ -29,7 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavbarWrapper />
+        <div className="py-16">
         {children}
+        </div>
       </body>
     </html>
   );
