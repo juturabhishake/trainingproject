@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
@@ -86,7 +87,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full fixed top-0 bg-background shadow-sm">
+    <nav className="w-full fixed top-0 bg-[var(--navbar)] shadow-sm">
       <div className="max-w-full mx-auto">
         <div className="flex items-center justify-between h-16 p-6">
           <div className="flex items-center gap-2 md:gap-4">
@@ -99,11 +100,11 @@ export default function Navbar() {
             <div className="text-xl font-semibold md:hidden">GTI</div>
           </div>
 
-          <div className="hidden md:flex md:items-center md:gap-6">
+          <div className="hidden md:flex md:items-center md:gap-6 bg-[var(--navbar)]">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-[var(--navbar)]">Getting started</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
@@ -124,7 +125,7 @@ export default function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-[var(--navbar)]">Components</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
@@ -137,12 +138,12 @@ export default function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-[var(--navbar)]`}>
                       Documentation
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-              </NavigationMenuList>
+              </NavigationMenuList> 
             </NavigationMenu>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
