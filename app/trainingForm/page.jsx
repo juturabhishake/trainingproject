@@ -160,16 +160,34 @@ const Page = () => {
         font,
         color: rgb(0, 0, 0),
     });
-    const ratingYPositions = [230, 245, 260, 275, 290, 305, 320, 335, 350, 365];
-
-    formData.ratings.forEach(async (rating, idx) => {
-      const rowY = height - ratingYPositions[idx];
-      const xOffset = 425 + (rating - 1) * 10;
-
-      const tickImageBytes = await fetch("/tick.png").then(res => res.arrayBuffer());
-      const tickImage = await pdfDoc.embedPng(tickImageBytes);
-      const tickImageDims = tickImage.scale(0.015);
-
+    let ratingYPositions = [226, 253, 276, 300.5, 324.5, 347.5, 373, 397, 420.5, 444];
+    const tickImageBytes = await fetch("/tick.png").then(res => res.arrayBuffer());
+    const tickImage = await pdfDoc.embedPng(tickImageBytes);
+    const tickImageDims = tickImage.scale(0.015);
+    formData.ratings.forEach((rating, idx) => {
+      let rowY = height - ratingYPositions[idx];
+      let xOffset = 388 + (rating - 1) * 10;
+      if (rating == 1) {
+        xOffset = 388;
+      } else if (rating == 2) {
+        xOffset = 419;
+      } else if (rating == 3) {
+        xOffset = 448;
+      } else if (rating == 4) {
+        xOffset = 474.5;
+      } else if (rating == 5) {
+        xOffset = 502;
+      } else if (rating == 6) {
+        xOffset = 488;
+      } else if (rating == 7) {
+        xOffset = 508;
+      } else if (rating == 8) {
+        xOffset = 528;
+      } else if (rating == 9) {
+        xOffset = 548;
+      } else if (rating == 10) {
+        xOffset = 568;
+      }
       if (rating > 0) {
         firstPage.drawImage(tickImage, { x: xOffset, y: rowY, width: tickImageDims.width, height: tickImageDims.height });
       }
