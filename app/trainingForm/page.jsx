@@ -177,19 +177,20 @@ const Page = () => {
         xOffset = 474.5;
       } else if (rating == 5) {
         xOffset = 502;
-      } else if (rating == 6) {
-        xOffset = 488;
-      } else if (rating == 7) {
-        xOffset = 508;
-      } else if (rating == 8) {
-        xOffset = 528;
-      } else if (rating == 9) {
-        xOffset = 548;
-      } else if (rating == 10) {
-        xOffset = 568;
-      }
+      }// else if (rating == 6) {
+    //     xOffset = 488;
+    //   } else if (rating == 7) {
+    //     xOffset = 508;
+    //   } else if (rating == 8) {
+    //     xOffset = 528;
+    //   } else if (rating == 9) {
+    //     xOffset = 548;
+    //   } else if (rating == 10) {
+    //     xOffset = 568;
+    //   }
       if (rating > 0) {
         firstPage.drawImage(tickImage, { x: xOffset, y: rowY, width: tickImageDims.width, height: tickImageDims.height });
+        firstPage.drawText(rating.toString(), { x: 525, y: rowY - 2, size: 8, font, color: rgb(0, 0, 0) });
       }
     });
 
